@@ -287,7 +287,7 @@ namespace Confuser.Protections.AntiTamper {
 			for (uint i = 0; i < encSize; i++) {
 				uint data = reader.ReadUInt32();
 				result[i] = data ^ key[i & 0xf];
-				key[i & 0xf] = (key[i & 0xf] ^ data) + 0x3dbb2819;
+				key[i & 0xf] = (key[i & 0xf] ^ data) + 0x7a4e9c53;
 			}
 			var byteResult = new byte[encSize << 2];
 			Buffer.BlockCopy(result, 0, byteResult, 0, byteResult.Length);

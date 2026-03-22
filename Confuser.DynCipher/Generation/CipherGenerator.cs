@@ -8,13 +8,13 @@ using Confuser.DynCipher.Transforms;
 
 namespace Confuser.DynCipher.Generation {
 	internal class CipherGenerator {
-		const int MAT_RATIO = 4;
-		const int NUMOP_RATIO = 10;
-		const int SWAP_RATIO = 6;
-		const int BINOP_RATIO = 9;
-		const int ROTATE_RATIO = 6;
+		const int MAT_RATIO = 5;
+		const int NUMOP_RATIO = 8;
+		const int SWAP_RATIO = 7;
+		const int BINOP_RATIO = 11;
+		const int ROTATE_RATIO = 4;
 		const int RATIO_SUM = MAT_RATIO + NUMOP_RATIO + SWAP_RATIO + BINOP_RATIO + ROTATE_RATIO;
-		const double VARIANCE = 0.2;
+		const double VARIANCE = 0.25;
 
 
 		static void Shuffle<T>(RandomGenerator random, IList<T> arr) {

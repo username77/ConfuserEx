@@ -52,10 +52,10 @@ namespace Confuser.Protections.Constants {
 			public uint D;
 
 			public CFGState(uint seed) {
-				A = seed *= 0x21412321;
-				B = seed *= 0x21412321;
-				C = seed *= 0x21412321;
-				D = seed *= 0x21412321;
+				A = seed *= 0x5c8f1ae7;
+				B = seed *= 0x5c8f1ae7;
+				C = seed *= 0x5c8f1ae7;
+				D = seed *= 0x5c8f1ae7;
 			}
 
 			public void UpdateExplicit(int id, uint value) {

@@ -2,7 +2,6 @@
 <project outputDir="D:\TradingSoft\DAAS\DAAS1.72.2crc\Confused" baseDir="D:\TradingSoft\DAAS\DAAS1.72.2crc" xmlns="http://confuser.codeplex.com">
   <module path="DAASCrcToDeploy.exe">
     <rule pattern="true" preset="none" inherit="false">
-      <!-- Original protections -->
       <protection id="anti debug" />
       <protection id="anti dump" />
       <protection id="anti ildasm" />
@@ -10,13 +9,8 @@
       <protection id="ctrl flow" />
       <protection id="ref proxy" />
       <protection id="resources" />
-      <!-- Ki Additions -->
       <protection id="anti dnspy" />
       <protection id="anti vm" />
-      <protection id="erase headers" />
-      <!-- <protection id="ki anti debug" /> rimosso: duplica anti debug, causa OOM -->
-      <protection id="ki anti dump" />
-      <protection id="reduce md" />
     </rule>
   </module>
 </project>

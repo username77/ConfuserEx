@@ -83,9 +83,9 @@ namespace Confuser.Protections.Resources {
 				var key = new uint[0x10];
 				uint state = keySeed;
 				for (int i = 0; i < 0x10; i++) {
-					state ^= state >> 13;
-					state ^= state << 25;
-					state ^= state >> 27;
+					state ^= state >> 11;
+					state ^= state << 21;
+					state ^= state >> 26;
 					key[i] = state;
 				}
 

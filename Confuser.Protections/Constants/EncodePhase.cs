@@ -93,9 +93,9 @@ namespace Confuser.Protections.Constants {
 			var key = new uint[0x10];
 			uint state = keySeed;
 			for (int i = 0; i < 0x10; i++) {
-				state ^= state >> 12;
-				state ^= state << 25;
-				state ^= state >> 27;
+				state ^= state >> 14;
+				state ^= state << 23;
+				state ^= state >> 29;
 				key[i] = state;
 			}
 

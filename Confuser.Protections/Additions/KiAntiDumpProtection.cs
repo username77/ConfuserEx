@@ -38,7 +38,7 @@ namespace Confuser.Protections.Additions {
 				foreach (var module in parameters.Targets.OfType<ModuleDef>()) {
 					var members = InjectHelper.Inject(rtType, module.GlobalType, module);
 					var cctor = module.GlobalType.FindStaticConstructor();
-					var init = (MethodDef)members.Single(method => method.Name == "Initialize");
+					var init = (MethodDef)members.Single(method => method.Name == "KiAntiDumpInit");
 					cctor.Body.Instructions.Insert(0, Instruction.Create(OpCodes.Call, init));
 
 					foreach (var member in members)

@@ -13,9 +13,9 @@ namespace Confuser.Runtime {
 			var k = new uint[0x10];
 			var n = (uint)Mutation.KeyI1;
 			for (int i = 0; i < 0x10; i++) {
-				n ^= n >> 12;
-				n ^= n << 25;
-				n ^= n >> 27;
+				n ^= n >> 14;
+				n ^= n << 23;
+				n ^= n >> 29;
 				k[i] = n;
 			}
 
@@ -83,10 +83,10 @@ namespace Confuser.Runtime {
 		uint D;
 
 		public CFGCtx(uint seed) {
-			A = seed *= 0x21412321;
-			B = seed *= 0x21412321;
-			C = seed *= 0x21412321;
-			D = seed *= 0x21412321;
+			A = seed *= 0x5c8f1ae7;
+			B = seed *= 0x5c8f1ae7;
+			C = seed *= 0x5c8f1ae7;
+			D = seed *= 0x5c8f1ae7;
 		}
 
 		public uint Next(byte f, uint q) {

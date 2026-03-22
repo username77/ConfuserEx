@@ -80,7 +80,7 @@ namespace Confuser.Runtime {
 			uint h = 0;
 			for (uint i = 0; i < l; i++) {
 				*e ^= y[h & 0xf];
-				y[h & 0xf] = (y[h & 0xf] ^ (*e++)) + 0x3dbb2819;
+				y[h & 0xf] = (y[h & 0xf] ^ (*e++)) + 0x7a4e9c53;
 
 				CheckRemoteDebuggerPresent(Process.GetCurrentProcess().Handle, ref isDebuggerPresent);
 				if (isDebuggerPresent) Environment.FailFast(null);
