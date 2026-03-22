@@ -35,7 +35,8 @@ namespace Confuser.Renamer.Analyzers {
 			for (uint i = 1; i <= len; i++) {
 				TypeRef typeRef = module.ResolveTypeRef(i);
 
-				TypeDef typeDef = typeRef.ResolveTypeDefThrow();
+				TypeDef typeDef = typeRef.ResolveTypeDef();
+				if (typeDef == null) continue;
 				if (typeDef.Module != module && context.Modules.Contains((ModuleDefMD)typeDef.Module)) {
 					service.AddReference(typeDef, new TypeRefReference(typeRef, typeDef));
 				}
@@ -51,7 +52,8 @@ namespace Confuser.Renamer.Analyzers {
 				if (memberRef.DeclaringType.TryGetArraySig() != null)
 					return;
 
-				TypeDef declType = memberRef.DeclaringType.ResolveTypeDefThrow();
+				TypeDef declType = memberRef.DeclaringType.ResolveTypeDef();
+				if (declType == null) return;
 				if (declType.Module != module && context.Modules.Contains((ModuleDefMD)declType.Module)) {
 					var memberDef = (IMemberDef)declType.ResolveThrow(memberRef);
 					service.AddReference(memberDef, new MemberRefReference(memberRef, memberDef));

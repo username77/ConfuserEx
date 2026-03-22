@@ -39,6 +39,8 @@ namespace Confuser.Protections.AntiTamper {
 			this.RVA = rva;
 		}
 
+		public uint CalculateAlignment() => 1;
+
 		public uint GetFileLength() {
 			return (uint)Body.Length + 4;
 		}
@@ -215,6 +217,8 @@ namespace Confuser.Protections.AntiTamper {
 			this.FileOffset = offset;
 			this.RVA = rva;
 		}
+
+		public uint CalculateAlignment() => 1;
 
 		public uint GetFileLength() {
 			return (uint)bodies.Count * 8 + 4;
