@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project outputDir="D:\TradingSoft\DAAS\DAAS1.72.2crc\Confused" baseDir="D:\TradingSoft\DAAS\DAAS1.72.2crc" xmlns="http://confuser.codeplex.com">
+  <module path="DAASCrcToDeploy.exe">
+    <rule pattern="true" preset="none" inherit="false">
+      <!-- Original protections (tested working) -->
+      <protection id="anti debug" />
+      <protection id="anti dump" />
+      <protection id="anti ildasm" />
+      <protection id="constants" />
+      <protection id="ctrl flow" />
+      <protection id="ref proxy" />
+      <protection id="resources" />
+      <!-- Ki Additions - runtime injection based (safe) -->
+      <protection id="anti dnspy" />
+      <protection id="anti vm" />
+      <protection id="erase headers" />
+      <protection id="ki anti debug" />
+      <protection id="ki anti dump" />
+      <protection id="reduce md" />
+      <!-- Ki Additions - IL manipulation (disabled: breaks maxstack) -->
+      <!-- <protection id="hide calls" /> -->
+      <!-- <protection id="mutate constants" /> -->
+      <!-- <protection id="ki ctrl flow" /> -->
+    </rule>
+  </module>
+</project>
